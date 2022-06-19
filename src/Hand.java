@@ -57,7 +57,13 @@ public class Hand {
             System.out.println("AN ACE");
         }
         if(handValue > 21){
-            System.out.println("YOU BUSTED");
+            System.out.println("BUSTED");
+        }
+    }
+    public void dealerDraw(){
+        // Dealer must stand on 17
+        while(handValue < 17){
+            nextCard();
         }
     }
     public int getHandValue(){
