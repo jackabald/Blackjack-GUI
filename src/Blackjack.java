@@ -1,6 +1,8 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Blackjack {
+public class Blackjack implements ActionListener {
     // value of hands
     int usersHand = 0;
     int dealersHand = 0;
@@ -33,6 +35,9 @@ public class Blackjack {
         panel.add(standButton);
         hitButton.setBounds(250,400,80,25);
         standButton.setBounds(150,400,80,25);
+        // Add listener to give buttons function
+        hitButton.addActionListener(this);
+        standButton.addActionListener(this);
     }
     public void textFields(){
         // Add usersHand text field
@@ -47,6 +52,10 @@ public class Blackjack {
         dealersHandText.setBounds(237,100,165,25);
         panel.add(dealerLabel);
         panel.add(dealersHandText);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
     public static void main(String[] args){
         Blackjack newGame = new Blackjack();
