@@ -7,17 +7,6 @@ public class Hand {
         this.name = name;
     }
 
-    public int getHandValue(){
-        return handValue;
-    }
-
-    public boolean checkIfBusted(){
-        if(handValue > 21){
-            return true;
-        }
-        return false;
-    }
-
     public void nextCard(){
         int i = (int)(Math.random() * 13);
         handValue += cardValues[i];
@@ -67,7 +56,18 @@ public class Hand {
         }if(i == 12){
             System.out.println("AN ACE");
         }
+        if(handValue > 21){
+            System.out.println("BUSTED");
+        }
     }
-
+    public void dealerDraw(){
+        // Dealer must stand on 17
+        while(handValue < 17){
+            nextCard();
+        }
+    }
+    public int getHandValue(){
+        return handValue;
+    }
 
 }
