@@ -12,10 +12,7 @@ public class Hand {
     }
 
     public boolean checkIfBusted(){
-        if(handValue > 21){
-            return true;
-        }
-        return false;
+        return handValue > 21;
     }
 
     public void nextCard(){
