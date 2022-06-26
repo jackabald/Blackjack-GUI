@@ -113,6 +113,7 @@ public class Blackjack implements ActionListener {
         dealersHandText.setText("0");
         hitButton.setEnabled(false);
         standButton.setEnabled(false);
+        dealNext.setEnabled(false);
         panel.add(resetText);
         resetText.setVisible(true);
     }
@@ -139,6 +140,7 @@ public class Blackjack implements ActionListener {
                 System.out.println("YOU LOSE");
                 lose.setVisible(true);
                 init();
+                SwingUtilities.updateComponentTreeUI(panel);
             }
             usersHand.nextCard();
             usersHandText.setText(Integer.toString(usersHand.getHandValue()));
@@ -149,6 +151,7 @@ public class Blackjack implements ActionListener {
                 System.out.println("YOU LOSE");
                 lose.setVisible(true);
                 init();
+                SwingUtilities.updateComponentTreeUI(panel);
             }
             standButton.setEnabled(false);
             hitButton.setEnabled(false);
