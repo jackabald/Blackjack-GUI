@@ -113,7 +113,6 @@ public class Blackjack implements ActionListener {
         dealersHandText.setText("0");
         hitButton.setEnabled(false);
         standButton.setEnabled(false);
-        dealNext.setEnabled(false);
         panel.add(resetText);
         resetText.setVisible(true);
     }
@@ -188,6 +187,6 @@ public class Blackjack implements ActionListener {
         }
     }
     public static void main(String[] args){
-        Blackjack newGame = new Blackjack();
+        new Blackjack();
     }
 }
